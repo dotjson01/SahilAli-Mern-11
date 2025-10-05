@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--
+    This HTML form collects users personal information, including name, email, password, gender, date of birth, and address. 
+    It features proper styling for input fields and submission buttons.
+    -->
+    <form action="">
+        <fieldset>
+            <legend>User Personal Information</legend>
+
+            <!--
+🔹 What it is
+This code defines a fieldset — a container that groups related form elements together — and adds a legend, which is like a title or label for that group.
+
+🔹 Why it’s used
+Organizes form fields: Makes forms easier to read and understand.
+Accessibility: Screen readers use fieldsets and legends to help users know what information each section is for.
+Styling: By default, browsers draw a visual box around the fieldset, with the legend as a title.
+
+🔹 How it works
+<fieldset> → Groups a set of related input fields.
+<legend> → Gives a caption to that group.
+
+-->
+            <label for="username">Username</label> <br>
+            <input type="text" id="username" name="username" required> <br> <br>
+
+            <label for="email">Email</label> <br>
+            <input type="email" name="email" id="email" required> <br> <br>
+
+            <label for="password">Password</label> <br>
+            <input type="password" name="password" id="password" required> <br> <br>
+
+            <label for="gender">Gender</label> <br>
+            <input type="gender" name="gender" id="gender"> <br> <br>
+
+            <label for="DOB">Date of Birth</label> <br>
+            <input type="date" name="DOB" id="DOB"> <br> <br>
+
+            <label for="address">Address</label> <br>
+            <textarea name="address" id="address"></textarea>
+
+            <input type="submit" value="Submit">
+
+        </fieldset>
+
+    </form>
+</body>
+
+</html>
