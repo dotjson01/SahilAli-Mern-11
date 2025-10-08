@@ -1,0 +1,41 @@
+ <!--
+
+HTML forms, defined using the <form> Tags are essential for collecting user input on web pages. 
+They incorporate a variety of interactive controls such as text fields, numeric inputs, 
+email fields, password fields, checkboxes, radio buttons, and submit buttons. 
+Over 85% of websites rely on forms to gather data from users, making them a 
+fundamental component of modern web development.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <h2>Form</h2>
+    <form action="">
+<!--
+        action = destination for form data
+        Empty ("") → submits to same page
+        URL or path → submits to another file or website
+-->
+        <label for="username">Username</label> <br>
+        <input type="text" id="username" name="username"> <br><br>
+        <label for="password">Password</label> <br>
+        <input type="password" name="password" id="password">
+
+        <!--
+        input → Defines an interactive field where users can enter data.
+        type="password" → Makes the entered text hidden (not visible as plain text).
+        id="password" → A unique identifier for this field (used in CSS or JavaScript to target it).
+        name="password" → The name of the field, which is sent with the form submission to the server.
+        -->
+
+    </form>
+    
+</body>
+</html>
