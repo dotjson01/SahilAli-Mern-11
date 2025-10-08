@@ -1,0 +1,93 @@
+body {
+    display: flex;
+    /* 
+display: flex; is a CSS property-value pair that turns an element into a flex container.
+When you apply it to a parent element, all its direct child elements become flex items, which means they can automatically align, space, and resize themselves nicely.
+
+🔹 Why it’s used
+Flexbox (short for flexible box layout) makes it much easier to:
+
+Arrange items in a row or column
+Center content vertically and/or horizontally
+Control spacing between elements
+Make layouts responsive without using floats or complex positioning
+
+*/
+    justify-content: center;
+    /*
+This property horizontally centers flex items inside a flex container.
+It controls how items are spaced along the main axis (usually left to right).
+
+👉 Think of it like:
+“Move everything to the center — from left and right.” */
+
+    align-items: center;
+    /* This property vertically centers flex items inside a flex container.
+It aligns items along the cross axis (usually top to bottom).
+
+👉 Think of it like:
+“Move everything to the middle vertically.”
+
+*/
+
+    height: 100vh;
+    /*height: 100vh; sets the height of an element to 100% of the viewport height.
+
+vh stands for viewport height
+1vh = 1% of the total height of the visible browser window
+So, 100vh means the element will fill the entire visible screen height
+
+🔹 Why it’s used
+It’s often used when you want a section or container to take up the full height of the screen, such as:
+
+Creating fullscreen hero sections
+Centering content vertically
+*/
+
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+form {
+    width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 0;
+}
+
+legend {
+    display: block;
+    margin-bottom: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="gender"],
+textarea,
+input[type="date"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
