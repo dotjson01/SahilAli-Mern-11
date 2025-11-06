@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Introduction:
+Modern layouts rely on Flexbox and Grid for responsiveness.
+
+Objective:
+Learn Flexbox and Grid properties.
+Design responsive layouts.
+
+Steps:
+Create a landing page with a header, content area, and footer.
+Use Flexbox for navigation.
+Apply Grid for a 3-column section.
+
+Expected Outcome:
+A responsive webpage with proper layout structures.
+
+ -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header{
+            background: bisque;
+            color: white;
+            padding: 1rem;
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a{
+            color: black;
+            text-decoration: none;
+        }
+
+        .content-area{
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .grid-section{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .grid-item{
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px;            
+        }
+
+        footer{
+            background-color:#3333;
+            padding: 2rem;
+            text-align: center;
+        }
+        @media(max-width:786px){
+            .grid-section{
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-area">
+        <section class="grid-section">
+            <div class="grid-item">
+                <h2>Column1</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus aliquid doloremque voluptatem!</p>
+            </div>
+
+            <div class="grid-item">
+                <h2>Column2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate suscipit cumque culpa?</p>
+            </div>
+
+            <div class="grid-item">
+                <h2>Column3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate suscipit cumque culpa?</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p> &copy;2025 GeeksForGeeks</p>
+    </footer>
+
+
+</body>
+
+</html>
