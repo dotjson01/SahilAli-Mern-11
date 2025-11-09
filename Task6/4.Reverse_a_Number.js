@@ -1,0 +1,16 @@
+// Reverse a Number
+// Write a program to reverse the digits of a number using a loop.
+// Reverse a number using a for loop
+
+
+
+let number = 12345678;
+let reverse = 0;
+
+while(number !== 0){
+    let digit = number %10;
+    reverse= reverse*10 +digit;
+    number = Math.floor( number/10) ;
+ 
+}
+console.log(reverse);
