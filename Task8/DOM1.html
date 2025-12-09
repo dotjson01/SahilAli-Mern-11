@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* CSS to make the divs look like circles */
+        .my-circle-style {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;        /* This makes it round */
+            display: inline-block;     /* Allows them to sit next to each other */
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Circle Generator</h2>
+    
+    <!-- 1. The Input fields and Button -->
+    <input type="number" id="userInput" placeholder="Enter number (e.g. 12)">
+    <input type="color" id="colorInput" value="#3498db">
+    <button id="generateBtn">Create Circles</button>
+
+    <!-- 2. The Container where circles will appear -->
+    <div id="circleContainer"></div>
+
+    <script>
+        // --- JAVASCRIPT ---
+
+        // Step 1: Get the elements using getElementById
+        var button = document.getElementById("generateBtn");
+        var inputField = document.getElementById("userInput");
+        var colorField = document.getElementById("colorInput");
+        var container = document.getElementById("circleContainer");
+
+        // Step 2: Add the Event Listener to the button
+        button.addEventListener("click", function() {
+
+            // Get the number from the input
+            var number = parseInt(inputField.value);
+            
+            // Get the color from the color picker
+            var userColor = colorField.value;
+
+            // Validation
+            if (number <= 0 || isNaN(number)) {
+                alert("Please enter a valid positive number!");
+                return;
+            }
+
+            // Clear previous circles
+            container.innerHTML = "";
+
+            // Loop to create the circles
+            for (var i = 0; i < number; i++) {
+                
+                // Create a new div element
+                var newDiv = document.createElement("div");
+
+                // Step 3: Add the class name to style it
+                newDiv.className = "my-circle-style";
+                
+                // Step 4: Apply the user's chosen color
+                newDiv.style.backgroundColor = userColor;
+
+                // Put the new div inside the container
+                container.appendChild(newDiv);
+            }
+        });
+
+    </script>
+
+</body>
+</html>
