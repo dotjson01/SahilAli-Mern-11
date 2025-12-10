@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geeks Travel — Photo Gallery</title>
+
+  <!-- Link to custom stylesheet -->
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <div class="nav-inner">
+        <a class="brand" href="#">Geeks Travel</a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" id="navToggle">
+          ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Destination</a></li>
+          <li><a href="#">Testimonial</a></li>
+          <li><a href="#" aria-disabled="true" class="disabled">Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Simple JS slider -->
+    <section class="slider" id="slider">
+      <div class="slides">
+        <img src="https://imgs.search.brave.com/oY9F2IYCnoI9Ci2wKpljky1kQXKJ_zFuoxHo6I72KC4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA5Lzg1LzMxLzY4/LzM2MF9GXzk4NTMx/Njg3OV80bTF5U1By/Nk5WT084SjFQTmJv/WlFTeEE2UlNVYlJm/Mi5qcGc" alt="Slide 1" class="slide active">
+        <img src="https://imgs.search.brave.com/tWDYeoJQBFSSEsURLXUMrHXFu8K03rYybm1Ty0xCfEc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTM4/ODMyMjY3NC92aWRl/by80ay1oaWdoLWFu/Z2xlLWRyb25lLXZp/ZXctb2YtamFtYS1t/YXNqaWQtb2xkLWRl/bGhpLW1hcmtldC1y/ZXNpZGVudGlhbC1h/cmVhcy1kZWxoaS1p/bmRpYS1zdG9jay5q/cGc_cz02NDB4NjQw/Jms9MjAmYz1pUzRB/enF3NXI2Q19tTXVS/Q0NCMUtoMTFXeTND/cjIybFV2U19LWk80/N0ZjPQ" alt="Slide 2" class="slide">
+        <img src="https://imgs.search.brave.com/biGHQWQCXTYbeSnt5rJi5fF6WSztr2OVLMTZbzM5ysQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXQuY29t/L3cvZnVsbC9hLzcv/ZS8xNjA4NTUxLTM4/NDB4MjE2MC1kZXNr/dG9wLTRrLW5ldy1k/ZWxoaS1iYWNrZ3Jv/dW5kLWltYWdlLmpw/Zw" alt="Slide 3" class="slide">
+      </div>
+
+      <button class="slider-prev" id="prevBtn" aria-label="Previous">‹</button>
+      <button class="slider-next" id="nextBtn" aria-label="Next">›</button>
+    </section>
+
+    <!-- Gallery grid -->
+    <section class="container">
+      <h1 class="page-title">Popular Tourist Destinations in India</h1>
+
+      <div class="grid">
+        <article class="card">
+          <img src="https://imgs.search.brave.com/eF2Jrs1ZL58x14TN9ahpI4FBCIwTRsByKajFqD3fly4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/YWlycGFuby5jb20v/ZmlsZXMvdGFqLW1h/aGFsLWluZGlhL2lt/YWdlOGEuanBn" alt="Taj Mahal">
+          <div class="card-body">
+            <h3>Taj Mahal, Agra</h3>
+            <p>An ivory-white marble mausoleum on the river Yamuna — a symbol of eternal love.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://imgs.search.brave.com/Fpfs92VrDqzU5M9VhRAgcOXgAIwp70IioDq_uhS0vmA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90cmF2/ZWx0YWxlc2Zyb21p/bmRpYS5pbi93cC1j/b250ZW50L3VwbG9h/ZHMvMjAxMC8xMS9I/YXdhLU1haGFsLWF0/LU5pZ2h0LUphaXB1/ci0xMDI0eDU5NC5q/cGc" alt="Hawa Mahal">
+          <div class="card-body">
+            <h3>Hawa Mahal, Jaipur</h3>
+            <p>The Palace of Winds in pink sandstone with intricate lattice work.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://imgs.search.brave.com/B6hiUNFcMUM6K6KBVxNxkAoJiRBlcg_wGm5FdIcEv-E/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vc3RhbXBs/ZG1vbWVudHMuY29t/L3dwLWNvbnRlbnQv/dXBsb2Fkcy8yMDIz/LzEyL2doYXRzLW9u/LWdhbmdlcy12YXJh/bmFzaS5qcGc_Zml0/PTEwMjQsNzY4JnNz/bD0x" alt="Varanasi">
+          <div class="card-body">
+            <h3>Ghats of Varanasi</h3>
+            <p>Sacred riverfront steps leading to the holy Ganges River.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://imgs.search.brave.com/ee6iZ2FMrAq8rNxlNuT7BmSxuyW7BA6dcQLzevt9xbg/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNjM2/NTczMzMwL3Bob3Rv/L2tlcmFsYS1iYWNr/d2F0ZXJzLXRvdXJp/c20tdHJhdmVsLWlu/LWNhbm9lLWJvYXQt/a2VyYWxhLWluZGlh/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1YLXNURTFFMEgy/MmN0eFJVUzhtb25n/RC1vR3J2Vld0WU5o/UndVN21QUTVvPQ" alt="Kerala">
+          <div class="card-body">
+            <h3>Kerala Backwaters</h3>
+            <p>Lagoons, lakes and canals — perfect for houseboat cruises.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://imgs.search.brave.com/sXaEy5_pvunua2abjiDqwiFCS6IGSvFjggOJpoUDi-o/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cHVzaHBlbmRyYWdh/dXRhbS5pbi9JbWFn/ZXMlMjBmb3IlMjBQ/b3N0cy8yMDE2L09j/dC9hbXJpdHNhci9B/bXJpdHNhci1nb2xk/ZW4tdGVtcGxlLXBp/Y3MtcHVuamFiLXBp/Y3MtYmVzdC10cmF2/ZWwtcGhvdG9ncmFw/aGVyLWJlc3QtdHJh/dmVsLWJsb2dnZXIt/aW5kaWEtMTQuanBn" alt="Golden Temple">
+          <div class="card-body">
+            <h3>Golden Temple, Amritsar</h3>
+            <p>The holiest Gurdwara of Sikhism — beautiful golden architecture.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://imgs.search.brave.com/ULrxzOvgaNHSXfGWdanb6HHGbxG4VFT1_V7sHACwim0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMyLnRyaXBvdG8u/Y29tL21lZGlhL2Zp/bHRlci9ubC9pbWcv/Njk5MTkvVHJpcERv/Y3VtZW50LzE1ODc2/MzQ3MjBfaW1nXzIw/MTgwODE3XzEyNDEwMS5qcGcud2VicA" alt="Hampi">
+          <div class="card-body">
+            <h3>Hampi, Karnataka</h3>
+            <p>Ancient Vijayanagara ruins with stunning temple architecture.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <details open>
+      <summary>How to</summary>
+      <p>
+        This notes section replaces the Bootstrap accordion. You can put any HTML here; details/summary is native and accessible.
+      </p>
+    </details>
+  </footer>
+
+  <!-- Small script for nav toggle + slider -->
+  <script>
+    // Nav toggle for small screens
+    (function() {
+      const toggle = document.getElementById('navToggle');
+      const links = document.getElementById('navLinks');
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('show');
+      });
+    })();
+
+    // Simple slider
+    (function() {
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      let idx = 0;
+      const next = document.getElementById('nextBtn');
+      const prev = document.getElementById('prevBtn');
+
+      function show(i) {
+        slides.forEach(s => s.classList.remove('active'));
+        slides[i].classList.add('active');
+      }
+      function nextSlide() { idx = (idx + 1) % slides.length; show(idx); }
+      function prevSlide() { idx = (idx - 1 + slides.length) % slides.length; show(idx); }
+
+      next.addEventListener('click', nextSlide);
+      prev.addEventListener('click', prevSlide);
+
+      // auto-play
+      let timer = setInterval(nextSlide, 4500);
+      // pause on hover
+      const slider = document.getElementById('slider');
+      slider.addEventListener('mouseenter', () => clearInterval(timer));
+      slider.addEventListener('mouseleave', () => timer = setInterval(nextSlide, 4500));
+    })();
+  </script>
+</body>
+</html>
