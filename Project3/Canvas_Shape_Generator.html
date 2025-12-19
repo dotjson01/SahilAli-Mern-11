@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Base style for all shapes */
+        .shape {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin: 5px;
+        }
+
+        /* Circle shape */
+        .circle {
+            border-radius: 50%;
+        }
+
+        /* Square shape */
+        .square {
+            border-radius: 0%;
+        }
+
+        /* Triangle shape using CSS borders trick */
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-bottom: 50px solid;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Shape Generator</h2>
+    
+    <!-- 1. Input fields for number, color, and shape -->
+    <label>Number:</label>
+    <input type="number" id="userInput" placeholder="e.g. 12">
+    <br><br>
+
+    <label>Color:</label>
+    <input type="color" id="colorInput" value="#3498db">
+    <br><br>
+
+    <label>Shape:</label>
+    <select id="shapeInput">
+        <option value="circle">Circle</option>
+        <option value="square">Square</option>
+        <option value="triangle">Triangle</option>
+    </select>
+    <br><br>
+
+    <button id="generateBtn">Create Shapes</button>
+
+    <!-- 2. The Container where shapes will appear -->
+    <div id="shapeContainer"></div>
+
+    <script>
+        // --- JAVASCRIPT ---
+
+        // Step 1: Get the elements using getElementById
+        var button = document.getElementById("generateBtn");
+        var inputField = document.getElementById("userInput");
+        var colorField = document.getElementById("colorInput");
+        var shapeField = document.getElementById("shapeInput");
+        var container = document.getElementById("shapeContainer");
+
+        // Step 2: Add the Event Listener to the button
+        button.addEventListener("click", function() {
+
+            // Get the number from the input
+            var number = parseInt(inputField.value);
+            
+            // Get the color from the color picker
+            var userColor = colorField.value;
+
+            // Get the shape from the dropdown
+            var userShape = shapeField.value;
+
+            // Validation
+            if (number <= 0 || isNaN(number)) {
+                alert("Please enter a valid positive number!");
+                return;
+            }
+
+            // Clear previous shapes
+            container.innerHTML = "";
+
+            // Loop to create the shapes
+            for (var i = 0; i < number; i++) {
+                
+                // Create a new div element
+                var newDiv = document.createElement("div");
+
+                // Step 3: Add BOTH class names (base + specific shape)
+                newDiv.className = "shape " + userShape;
+                
+                // Step 4: Apply the user's chosen color
+                if (userShape === "triangle") {
+                    // For triangle, color the border
+                    newDiv.style.borderBottomColor = userColor;
+                } else {
+                    // For circle and square, color the background
+                    newDiv.style.backgroundColor = userColor;
+                }
+
+                // Put the new div inside the container
+                container.appendChild(newDiv);
+            }
+        });
+
+    </script>
+
+</body>
+</html>
