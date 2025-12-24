@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Profile Finder</title>
+    <style>
+        #result {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+
+        .profile-img {
+            width: 100px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text" name="username" id="username" placeholder="username">
+    <button id="find">Find</button>
+
+    <!--container that is trying to display in a particular container inside a body -->
+    <div id="result"></div>
+
+
+</body>
+<script>
+    const find = document.querySelector("#find");
+    // - JavaScript ne **Find button** ko pakad liya aur `find` variable mein store kar diya
+
+    const resultContainer = document.querySelector("#result");
+    // - JavaScript ne **result div** ko pakad liya aur `resultContainer` mein store kar diya
+
+    /* 
+
+    **Real-world analogy:** 
+    Tumne apne cameraman ko bola - "Bhai, camera pakad le (find button) aur tripod ready rakh (result container)"
+    
+    */
+
+
+    find.addEventListener("click", async () => {
+        /*
+
+        JavaScript ka ear button pe laga hua tha (addEventListener)
+        Click detect ho gaya!
+        Ab andar ka code chalega...
+        
+        YouTube analogy: Tumne "Upload Video" button press kiya - ab process start hogi!
+
+        */
+        const username = document.querySelector("#username").value.trim();
+
+        /*
+           document.querySelector("#username") → Input box dhundo
+           .value → Usmein jo likha hai wo nikalo → "octocat"
+           .trim() → Extra spaces remove karo → "octocat" (clean)
+           Store in username variable
+           
+           Rohan ne type kiya: "  octocat  " (extra spaces)
+           After trim: "octocat" ✅
+        */
+
+        if (username === "") {
+            alert("Please Enter username");
+            return;
+        }
+
+        /*
+            Kya check ho raha:
+            
+            Agar username khali hai? ("")
+            If YES → Alert dikha do aur ruk jao (return)
+            If NO → Aage badho
+            
+            Rohan's case: Username = "octocat" ✅ Not empty, toh aage badho!
+
+        */
+
+        resultContainer.innerHTML = "Searching......."
+
+        /*   
+             **Screen pe kya dikha:**
+             ```
+             [octocat        ]  [Find]
+             _________________________
+             Searching.......
+             Kya hua:
+             
+             Result div mein "Searching......." text daal diya
+             User ko pata chal gaya - "Haan bhai, kaam chal raha hai!"
+        */
+
+        try { 
+            
+            //1. **`try {`** → Bhai, try kar ke dekh (agar error aaye toh catch kar lenge)
+        
+            const response = await fetch(`https://api.github.com/users/${username}`); 
+            
+         /*
+
+          2. fetch(url) → Internet se data maango
+          - URL: `https://api.github.com/users/octocat`
+          - Yeh ek **request** hai GitHub ke server ko
+
+
+          3. await → Ruko, response aane do (asynchronous - YouTube video upload ki tarah)
+          4.const response → Jo reply aaya, use `response` mein store karo
+
+
+          Browser → [Request] → GitHub Server
+          Browser ← [Response] ← GitHub Server
+
+
+         */  
+
+            if (!response.ok) {
+                alert("Something went wrong");
+                return;
+            }
+
+            /*
+                response.ok → Kya sab theek hai? (Status code 200 = OK)
+                !response.ok → Agar OK nahi hai?
+                
+                If TRUE → Alert dikha do, ruk jao
+                If FALSE → Aage badho
+                
+                Rohan's case:
+                GitHub found "octocat" → response.ok = true ✅
+                Toh aage badho!
+            */
+
+            const data = await response.json();
+            console.log(data);
+
+            /*
+            
+              response.json() → Raw data ko readable JavaScript object mein convert karo
+              await → Conversion complete hone tak wait karo
+              const data → Converted data ko data variable mein store karo
+
+            */
+
+
+            // stored all data into data variable
+            resultContainer.innerHTML = `
+                    <img src="${data.avatar_url}" class="profile-img" alt="${data.name}">
+                    <h2>${data.name || data.login}</h2>
+                    <p> Bio ${data.bio || "No bio available"}</p>
+                    <p>Public Repos: ${data.public_repos}</p>
+                    <a href="${data.html_url}" target="_blank">View Profile</a>
+                    <p> Followers: ${data.followers} </p>
+                    <p> Following : ${data.following} </p>
+
+                `;
+
+        }
+        catch (err) {
+            console.log("Fetch Error", err);
+            resultContainer.innerHTML = `<p style="color: red;">${err.message}</p>`;
+
+        }
+    })
+
+</script>
+
+</html>
+
+
+<!--
+
+## 🎬 **COMPLETE FLOW DIAGRAM**
+```
+1. Website loads
+   ↓
+2. Rohan types username
+   ↓
+3. Rohan clicks "Find"
+   ↓
+4. JavaScript pakadta hai username
+   ↓
+5. Check: Empty hai?
+   ├─ YES → Alert + Stop
+   └─ NO → Continue
+   ↓
+6. "Searching..." dikha do
+   ↓
+7. GitHub ko request bhejo (fetch)
+   ↓
+8. Response aane tak wait (await)
+   ↓
+9. Check: Response OK hai?
+   ├─ NO → Alert + Stop
+   └─ YES → Continue
+   ↓
+10. JSON mein convert karo
+   ↓
+11. Data screen pe display karo
+   ↓
+12. SUCCESS! 🎉
+
+(Agar kahi error → Jump to catch block)
+
+
+
+-->
